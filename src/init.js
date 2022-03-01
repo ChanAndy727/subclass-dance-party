@@ -29,12 +29,22 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
+      window.dancers.length // argument 1: top
+        ? window.dancers[window.dancers.length - 1]._position.top
+        : $('body').height() * Math.random(),
+      window.dancers.length // argument 2: left
+        ? window.dancers[window.dancers.length - 1]._position.left
+        : $('body').width() * Math.random(),
+      Math.random() * 1000 // argument 3: time between steps
     );
     $('body').append(dancer.$node);
+    // Add mouseover handler for each dancer that teleports them
+    dancer.$node.on('mouseover', function() {
+      dancer.setPosition(
+        $('body').height() * Math.random(),
+        $('body').width() * Math.random()
+      );
+    });
     window.dancers.push(dancer);
   });
 });
-
