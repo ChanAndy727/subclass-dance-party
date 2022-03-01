@@ -4,6 +4,9 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
+  background: url('./images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,7 +24,25 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  /* border:10px solid red;
   border-radius:10px;
-  position:absolute;
+  position:absolute; */
+  position: absolute;
+  border: 0;
+  border-radius: 0;
+  display: block;
+  width: 75px;
+  height: 75px;
+  background-color:transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.blinkyDancer {
+  background-image: url('./images/Bulbasaur.png');
+}
+.slidingDancer {
+  background-image: url('./images/magikarp.png')
+}
+.teleportingDancer {
+  background-image: url('./images/abra.png');
 }
